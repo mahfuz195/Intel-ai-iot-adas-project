@@ -36,6 +36,17 @@ while (capture image from dashboard):
      4(b) if p1 is inside the P:
           --> issue and pre-forward collision warning.
 ```
+
+### Project File Structure:
+
+The project contains the following files: 
+
+1. LaneVehicle.py: Contains the implementaion of the P-FCW application.
+2. helper.py : Contains the helpers functions for Lane Detection.
+3. imgs: Contains the raw images of the collected driving data.
+4. models: Contains the pre-trained IntelOpenVino models. 
+
+
 ### Used Learning from IntelAI Course
 In the foundational course of IntelAI using OpenVino, I have learned how to use a pre-trained model for inference. I have used this learning in vehicle detection. I have used the pre-train demo model : https://docs.openvinotoolkit.org/latest/_models_intel_vehicle_detection_adas_0002_description_vehicle_detection_adas_0002.html
 
