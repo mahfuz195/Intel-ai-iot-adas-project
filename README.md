@@ -42,7 +42,7 @@ while (capture image from dashboard):
 The project contains the following files: 
 
     .
-    ├── LaneVehicle.py          # Contains the implementaion of the P-FCW application.
+    ├── app_pfcw.py            # Contains the implementaion of the P-FCW application.
     ├── helper.py               # Contains the helpers functions for Lane Detection.
     ├── imgs                    # Contains the raw images of the collected driving data.
     ├── models                  # Contains the pre-trained IntelOpenVino models.
@@ -70,7 +70,7 @@ I installed the necessary hardware in the vehicle and drove my car in one of the
 
 To run the project, please go inside the project direction and run the following command in the terminal:
 
-``` python3 LaneVehicle.py```
+``` python3 app_pfcw.py```
 
 
 ### Further Improvement
