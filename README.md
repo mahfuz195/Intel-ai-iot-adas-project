@@ -7,7 +7,7 @@ In implementing the application, I have integrated the simple lane detection and
 
 
 
-### Hardware Setup.
+### Hardware Setup
 
 
 One of the focus of this project was to reduce the cost. Thus, I have a Raspberry Pi instead of using a GPU-enabled device (e.g. Jetson TX).
@@ -24,7 +24,7 @@ The hardware setup inside the vehicle is shown here:
 
 
 
-### P-FCW ALgorithm:
+### P-FCW ALgorithm
 The algorithm is implemneted as follows:
 ```
 while (capture image from dashboard):
