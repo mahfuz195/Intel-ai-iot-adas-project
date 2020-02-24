@@ -8,6 +8,18 @@ In implemetnign the applicaion, I have integragted the lane detection and vehicl
 
 ### Hardware Setup.
 
+One of the focus of this project was to reduce the cost. Thus, I have a Raspberry Pi instead of using a GPU-enabled device (e.g. Jetson TX).
+But the inference for vehicle detection was slow in Raspberry Pi, and bought a Intel Modivus Neural Computing Stick for inferecne engine.
+
+Here is the list of hardware and their corrposning prices:
+
+1. Raspberry Pi ($35)
+2. Intel Neural Compute Stick ($79)
+3. Video Web Camera ($70)
+
+The hardware setup inside the vehicle is shown here: 
+
+
 ### ALgorithm:
 The algorithm is implemneted as follows:
 ```
