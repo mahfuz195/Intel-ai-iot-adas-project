@@ -52,4 +52,7 @@ During the project, I learned a lot on IntelOpenVino tools and is happy to imple
 I installed the necessary hardware in the vehicle and drove my car in one of the road in Clemson (US-123). The output from the P-FCW application is shown in the following video:
 
 
-### Performance:
+### Further Improvement:
+
+The performace of the applicaiton in terms of frame per second (FPS) was a bottneck in my implementation. I was able to gain atmost ~5FPS for P-FCW usign Async mode of IntelOpenVino tools and intel neural compute stick. 
+
