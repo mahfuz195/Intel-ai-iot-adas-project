@@ -50,7 +50,7 @@ The project contains the following files:
     
 
 
-### Used Learning from IntelAI Course
+### Demonstration of the Course materials 
 In the foundational course of IntelAI using OpenVino, I have learned how to use a pre-trained model for inference. I have used this learning in vehicle detection. I have used the pre-train demo model : https://docs.openvinotoolkit.org/latest/_models_intel_vehicle_detection_adas_0002_description_vehicle_detection_adas_0002.html
 
 
