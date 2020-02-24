@@ -32,4 +32,8 @@ while (capture image from dashboard):
      4(b) if p1 is inside the P:
           --> issue and pre-forward collision warning.
 ```
-### Required Hardawre:
+### Project Output
+I installed the necessary hardware in the vehicle and drove my car in one of the road in Clemson (US-123). The output from the P-FCW applicaiton is shown in the following video:
+
+
+### Performance:
