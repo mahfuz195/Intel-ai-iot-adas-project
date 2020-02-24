@@ -24,7 +24,7 @@ The hardware setup inside the vehicle is shown here:
 
 
 
-### ALgorithm:
+### P-FCW ALgorithm:
 The algorithm is implemneted as follows:
 ```
 while (capture image from dashboard):
