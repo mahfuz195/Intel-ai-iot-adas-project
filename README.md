@@ -37,14 +37,15 @@ while (capture image from dashboard):
           --> issue and pre-forward collision warning.
 ```
 ### Used Learning from IntelAI Course
+In the foundational course of IntelAI using OpenVino, I have learned how to use a pre-trained model for inference. I have used this learning in vehicle detection. I have used the pre-train demo model : https://docs.openvinotoolkit.org/latest/_models_intel_vehicle_detection_adas_0002_description_vehicle_detection_adas_0002.html
 
-In the foundational couse of IntelAI using OpenVino, I have learned how to use a pre-trained model for inference. I have used this leanring in vehicle detection. I have used the pre-traindemo model : https://docs.openvinotoolkit.org/latest/_models_intel_vehicle_detection_adas_0002_description_vehicle_detection_adas_0002.html
 
-Also, I have implented the Async Infernce model for speeding up the inference time. The code I followed to implemted is from Intel page:
-
+Also, I have implemented  the Async Inference model for speeding up the inference time. The code I followed to implement is from Intel page:
 https://github.com/opencv/open_model_zoo/tree/master/demos/python_demos
 
-During the project, I leared a lot on IntelOpenVino tools and is ahppy to implement in real-world what I have learned.
+
+During the project, I learned a lot on IntelOpenVino tools and is happy to implement in real-world what I have learned.
+
 
 
 ### Project Output
