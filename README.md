@@ -40,11 +40,13 @@ while (capture image from dashboard):
 ### Project File Structure:
 
 The project contains the following files: 
-
-1. LaneVehicle.py: Contains the implementaion of the P-FCW application.
-2. helper.py : Contains the helpers functions for Lane Detection.
-3. imgs: Contains the raw images of the collected driving data.
-4. models: Contains the pre-trained IntelOpenVino models. 
+    .
+    ├── LaneVehicle.py          # Contains the implementaion of the P-FCW application.
+    ├── helper.py               # Contains the helpers functions for Lane Detection.
+    ├── imgs                    # Contains the raw images of the collected driving data.
+    ├── models                  # Contains the pre-trained IntelOpenVino models.
+    └── README.md
+    
 
 
 ### Used Learning from IntelAI Course
