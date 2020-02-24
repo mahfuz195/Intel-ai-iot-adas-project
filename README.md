@@ -36,6 +36,10 @@ while (capture image from dashboard):
      4(b) if p1 is inside the P:
           --> issue and pre-forward collision warning.
 ```
+### Dataset:
+
+To implement the project and fine tuning the project performance, I create my own dataset. I used a camera in the dashboard of my car and recorded the video in my laptop. I collected almost 5000 images from driving in the US-123 state road. Some snapshot of the data is avaiable in this project repository.
+
 
 ### Project File Structure:
 
