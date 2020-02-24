@@ -3,8 +3,10 @@
 The roadway traffic crash in one the leading causes of death in United States (US). Every year almost 30000 Americans die in traffic related crashes. According to the US Department of Transportation report, almost 2685 rear-end collision happened only in 2018. However, most of this rear-end collision or forward-collision can be prevented using latest technology. Many recent vehicles are equipped with advance driving assistance system (ADAS), where forward collision warning is included. However, I think, in spite of having a forward collision warning, we can further reduce the forward collision using a pre-forward collision warning that will be given to the drivers. Hence, in this project I have implemented a pre-forward collision warning application using a computer vision. Furthermore, one of my goals was to reduce the cost of such ADAS system, and equip the conventional vehicles with pre-forward collision application, which does not contain any ADAS system yet.
 
 
-In implementing the application, I have integrated the simple lane detection and Deep Learning based vehicle detection together. I have used the code from one of my projects for Lane detection, which I learned during "Self-driving Car Nano-degree" program, and used IntelOpenVino pre-trained model for vehicle detection.
+As being a robotics enthusiast, I wanted to implement this P-FCW application in real-world. So, I bought Raspberry Pi, Intel Neural Stick, and a webcam to instrument my car with this P-FCW application. I already had a monitor from one of my earlier project that I used here as a dashboard of my car.
 
+
+In implementing the application, I have integrated the simple lane detection and Deep Learning based vehicle detection together. I have used the code from one of my projects for Lane detection, which I learned during "Self-driving Car Nano-degree" program, and used IntelOpenVino pre-trained model for vehicle detection.
 
 
 ### Hardware Setup
@@ -36,7 +38,7 @@ while (capture image from dashboard):
      4(b) if p1 is inside the P:
           --> issue and pre-forward collision warning.
 ```
-### Dataset:
+### Dataset
 
 To implement the project and fine tuning the project performance, I create my own dataset. I used a camera in the dashboard of my car and recorded the video in my laptop. I collected almost 5000 images from driving in the US-123 state road. Some snapshot of the data is available in this project repository.
 
