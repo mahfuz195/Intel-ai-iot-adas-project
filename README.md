@@ -87,7 +87,12 @@ During the project, I learned a lot on IntelOpenVino tools and is happy to imple
 
 
 ### Project Output
-I installed the necessary hardware in the vehicle and drove my car in US-123 located at Clemson, South Carolina, USA. The output from the P-FCW application is shown in the following video:  https://youtu.be/RQPihgR3OXE
+I installed the necessary hardware in the vehicle and drove my car in US-123 located at Clemson, South Carolina, USA. An Image out on the dashboard of the car is as follows:
+
+![Alt text](images/frame_5189.jpg?raw=true "Sample Output")
+
+
+The output from the P-FCW application is shown in the following video:  https://youtu.be/RQPihgR3OXE
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/RQPihgR3OXE/0.jpg)](https://www.youtube.com/watch?v=RQPihgR3OXE)
 
