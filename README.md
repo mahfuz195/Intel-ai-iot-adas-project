@@ -114,4 +114,8 @@ The performace of the applicaiton in terms of frame per second (FPS) was a bottn
 
 It was fun working on this project. I would like to thank Intel and Udacity for giving me the opportunity through the Intel AI Scholarship, to learn more about IoT Edge Computing. 
 
+### A personal note
+
+A few days back I saw a job advertisement from one of the renowned automated vehicle companies. There was a question "What is the most exceptional thing you have done?". That made me wonder what I have done to can be exceptional. Maybe this project? But happy to pull this project off, even after a huge graduate research workload. :)
+
 
