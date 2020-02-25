@@ -206,16 +206,18 @@ def main():
     ie = IECore()
     detector = Detector(ie, model_xml, model_bin, 0.4, "MYRIAD")
     
-    count = 4564
-    count_max = 4900
+    count = 4734
+    count_max = 5269
     
     fps = FPS().start()
     
     while (True):
         
-        filename = 'imgs_2/frame_%d.jpg'%count
-        print ('readling file : ', filename)
-        frame = cv2.imread(filename,1)
+        file = 'frame_%d.jpg' %count
+        in_filename = 'imgs_4/'+ file
+        
+        #print ('readling file : ', filename)
+        frame = cv2.imread(in_filename,1)
         
         count+=1
         if(count>=count_max): break
@@ -246,6 +248,10 @@ def main():
         
         
         cv2.imshow('Vechile ADAS System', frame)
+        
+        out_filename = 'output/'+ file
+        cv2.imwrite(out_filename,frame)
+        
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
         
