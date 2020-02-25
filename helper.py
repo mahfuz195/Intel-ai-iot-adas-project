@@ -2,6 +2,8 @@ import math
 import numpy as np
 import cv2
 
+import collections
+
 def to_hsv(img):
     return cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 
@@ -220,12 +222,16 @@ def hough_lines(img, rho, theta, threshold, min_line_len, max_line_gap):
 prev_left = []
 prev_right = []
 
+
+right_mem = collections.deque(maxlen=10)
+left_mem  = collections.deque(maxlen=10)
+
 def average_lines(lines, img):
     '''
     img should be a regioned canny output
     '''
     if lines is None: return lines
-    global prev_left, prev_right
+    global prev_left, prev_right, right_mem, left_mem
     
     positive_slopes = []
     positive_xs = []
@@ -268,9 +274,19 @@ def average_lines(lines, img):
         x1 = int((region_top_y - b)/m)
         x2 = int((ysize - b)/m)
         prev_left = [(x1, region_top_y, x2, ysize)]
-        new_lines.append([(x1, region_top_y, x2, ysize)])
+
+        left_mem.append([(x1, region_top_y, x2, ysize)])
+        #new_lines.append([(x1, region_top_y, x2, ysize)])
+
+        #print (left_mem)
+        #print (np.mean(left_mem,axis=0).astype(int))
+        new_lines.append(np.mean(left_mem,axis=0).astype(int))
+
+        #print (new_lines)
     else:
-        if(len(prev_left)>0):new_lines.append(prev_left)
+        if(len(left_mem)>0):
+            new_lines.append(np.mean(left_mem,axis=0).astype(int))
+            #new_lines.append(prev_left)
         
     
     if len(negative_slopes) > 0:
@@ -285,10 +301,13 @@ def average_lines(lines, img):
         x2 = int((ysize - b)/m)
         
         prev_right = [(x1, region_top_y, x2, ysize)]
-        new_lines.append([(x1, region_top_y, x2, ysize)])
+        right_mem.append([(x1, region_top_y, x2, ysize)])
+        new_lines.append(np.mean(right_mem, axis=0).astype(int))
+        #new_lines.append([(x1, region_top_y, x2, ysize)])
     else:
-        if(len(prev_right)>0):new_lines.append(prev_right)
-    
+        if(len(prev_right)>0):
+            new_lines.append(np.mean(right_mem,axis=0).astype(int))
+            #new_lines.append(prev_right)
     
     return np.array(new_lines)
 
