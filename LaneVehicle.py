@@ -18,9 +18,9 @@ import cv2
 import numpy as np
 from argparse import ArgumentParser, SUPPRESS
 
-from openvino.inference_engine import IECore
+#from openvino.inference_engine import IECore
 
-from detector import Detector
+#from detector import Detector
 from helper import *
 
 from imutils.video import FPS
@@ -187,13 +187,12 @@ def viz(frame,out):
     
     if(warning):
         frame = insertWarning(frame)
-    
+        
     return frame, total_vehicle
 
-w_img = cv2.imread('images/warning.jpeg',1)
+w_img = cv2.imread('images/w_img.jpg',1)
 h, w = int(w_img.shape[0]*0.3), int(w_img.shape[1]*0.3)
 w_img = cv2.resize(w_img, (w,h),interpolation= cv2.INTER_AREA)
-
 w_img = Image.fromarray(w_img)
 
 
@@ -203,17 +202,17 @@ def main():
     model_xml = "models/vehicle-detection-adas-0002_f16.xml"
     model_bin = "models/vehicle-detection-adas-0002_f16.bin"
 
-    ie = IECore()
-    detector = Detector(ie, model_xml, model_bin, 0.4, "MYRIAD")
+    #ie = IECore()
+    #detector = Detector(ie, model_xml, model_bin, 0.4, "MYRIAD")
     
-    count = 4564
-    count_max = 4900
+    count = 4734
+    count_max = 5269
     
     fps = FPS().start()
     
     while (True):
         
-        filename = 'imgs_2/frame_%d.jpg'%count
+        filename = 'imgs_4/frame_%d.jpg'%count
         print ('readling file : ', filename)
         frame = cv2.imread(filename,1)
         
@@ -236,13 +235,13 @@ def main():
         #    labels_map = None
         #frame = cv2.resize(frame, (1280,720),interpolation= cv2.INTER_AREA)
         frame = detect_lines(frame)
-        out = detector.detect(frame)
-        frame, t_vehicle = viz(frame,out)
+        #out = detector.detect(frame)
+        #frame, t_vehicle = viz(frame,out)
         
         
         
-        cv2.putText(frame, 'summary: {:.1f} FPS'.format(float(1 / (detector.infer_time * len(out)))), (5, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
-        cv2.putText(frame, 'Total Vehicle Detected: {:.0f}'.format(t_vehicle), (5, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
+        #cv2.putText(frame, 'summary: {:.1f} FPS'.format(float(1 / (detector.infer_time * len(out)))), (5, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
+        #cv2.putText(frame, 'Total Vehicle Detected: {:.0f}'.format(t_vehicle), (5, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
         
         
         cv2.imshow('Vechile ADAS System', frame)
