@@ -214,7 +214,7 @@ def main():
     while (True):
         
         file = 'frame_%d.jpg' %count
-        in_filename = 'imgs_4/'+ file
+        in_filename = 'data/'+ file
         
         #print ('readling file : ', filename)
         frame = cv2.imread(in_filename,1)
@@ -249,8 +249,8 @@ def main():
         
         cv2.imshow('Vechile ADAS System', frame)
         
-        out_filename = 'output/'+ file
-        cv2.imwrite(out_filename,frame)
+        #out_filename = 'output/'+ file
+        #cv2.imwrite(out_filename,frame)
         
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
