@@ -63,6 +63,24 @@ In the foundational course of IntelAI using OpenVino, I have learned how to use 
 Also, I have implemented  the Async Inference model for speeding up the inference time. The code I followed to implement is from Intel page:
 https://github.com/opencv/open_model_zoo/tree/master/demos/python_demos
 
+Here is the code for Async Inference mode:
+
+```
+       if self.is_async:
+            self.feed_dict[self.input_blob] = image
+            self._exec_model.start_async(request_id=self.cur_request_id,inputs=self.feed_dict)
+            
+            t0 = cv2.getTickCount()
+            while True:
+                status = self._exec_model.requests[self.cur_request_id].wait(-1)
+                if (status ==0):
+                    output = self._exec_model.requests[self.cur_request_id].outputs
+                    break
+                else:
+                    time.sleep(0.01)
+                    
+                self.cur_request_id, self.next_request_id = self.next_request_id, self.cur_request_id
+```                
 
 During the project, I learned a lot on IntelOpenVino tools and is happy to implement in real-world what I have learned.
 
