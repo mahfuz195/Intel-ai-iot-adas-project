@@ -103,3 +103,8 @@ To run the project, please go inside the project direction and run the following
 
 The performace of the applicaiton in terms of frame per second (FPS) was a bottneck in my implementation. I was able to gain atmost ~5FPS for P-FCW usign Async mode of IntelOpenVino tools and Intel Neural Compute Stick. 
 
+### Summary 
+
+It was fun working on this project. I would like to thank Intel and Udacity for giving me the opportunity through the Intel AI Scholarship, to learn more about IoT Edge Computing. 
+
+
