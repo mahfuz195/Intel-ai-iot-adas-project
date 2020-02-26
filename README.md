@@ -27,7 +27,7 @@ The hardware setup inside the vehicle is shown here:
 
 
 
-![Alt text](images/	hardware_setup.jpg?raw=true "Hardware Setup")
+![Alt text](images/hardware_setup.jpg?raw=true "Hardware Setup")
  
 
 
