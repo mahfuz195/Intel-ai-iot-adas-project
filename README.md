@@ -9,7 +9,7 @@ As being a robotics enthusiast, I wanted to implement this P-FCW application in 
 In implementing the application, I have integrated the simple lane detection and Deep Learning based vehicle detection together. I have used the code from one of my projects for Lane detection, which I learned during "Self-driving Car Nano-degree" program, and used IntelOpenVino pre-trained model for vehicle detection.
 
 
-### P-FCW ALgorithm
+### P-FCW Algorithm
 The algorithm is implemneted as follows:
 ```
 while (capture image from dashboard):
