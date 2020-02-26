@@ -129,7 +129,7 @@ def detect_lines(img, debug=False):
     threshold = min_line_length//4
     lines, VERTS = hough_lines(regioned_edges, rho, theta, threshold, min_line_length, max_line_gap)
     
-    print (VERTS)
+    #print (VERTS)
 
     # Let's combine the hough-lines with the canny_edges to see how we did
     
@@ -181,7 +181,7 @@ def viz(frame,out):
             #warning = issue_warning(600,700)
             
 
-            print (warning)
+            #print (warning)
         
     frame = weighted_img(frame,img,a=1.0, b=.5, l=0.)
     
@@ -219,6 +219,7 @@ def main():
         #print ('readling file : ', filename)
         frame = cv2.imread(in_filename,1)
         
+        
         count+=1
         if(count>=count_max): break
         
@@ -237,8 +238,14 @@ def main():
         #else:
         #    labels_map = None
         #frame = cv2.resize(frame, (1280,720),interpolation= cv2.INTER_AREA)
+        #t0 = cv2.getTickCount()
         frame = detect_lines(frame)
+        #t = (cv2.getTickCount() - t0) / cv2.getTickFrequency()
+        #print ('Lane Detection frequency : ', 1.0/t)
+        
         out = detector.detect(frame)
+        
+        
         frame, t_vehicle = viz(frame,out)
         
         

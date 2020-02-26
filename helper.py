@@ -151,25 +151,25 @@ def region_of_interest(img):
     verts  = create_vertices(img)
     cv2.fillPoly(mask, verts, ignore_mask_color)
     
-    print (verts)
+    #print (verts)
     #Let's return an image of the regioned area in lines
     line_img = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)
     #cv2.fillPoly(line_img, [verts], 255)
     cv2.polylines(line_img, verts, isClosed=True, color=[0, 255, 0], thickness=4)
     
-    v = np.concatenate(verts).ravel().tolist()
-    cv2.circle(line_img,(v[0],v[1]), 20, (0,255,0),-1)
-    cv2.circle(line_img,(v[2],v[3]), 20, (0,255,0),-1)
-    cv2.circle(line_img,(v[4],v[5]), 20, (0,255,0),-1)
-    cv2.circle(line_img,(v[6],v[7]), 20, (0,255,0),-1)
+    #v = np.concatenate(verts).ravel().tolist()
+    #cv2.circle(line_img,(v[0],v[1]), 20, (0,255,0),-1)
+    #cv2.circle(line_img,(v[2],v[3]), 20, (0,255,0),-1)
+    #cv2.circle(line_img,(v[4],v[5]), 20, (0,255,0),-1)
+    #cv2.circle(line_img,(v[6],v[7]), 20, (0,255,0),-1)
     
     #returning the image only where mask pixels are nonzero
     masked_image = cv2.bitwise_and(img, mask)
     
-    cv2.circle(masked_image,(v[0],v[1]), 20, (0,255,0),-1)
-    cv2.circle(masked_image,(v[2],v[3]), 20, (0,255,0),-1)
-    cv2.circle(masked_image,(v[4],v[5]), 20, (0,255,0),-1)
-    cv2.circle(masked_image,(v[6],v[7]), 20, (0,255,0),-1)
+    #cv2.circle(masked_image,(v[0],v[1]), 20, (0,255,0),-1)
+    #cv2.circle(masked_image,(v[2],v[3]), 20, (0,255,0),-1)
+    #cv2.circle(masked_image,(v[4],v[5]), 20, (0,255,0),-1)
+    #cv2.circle(masked_image,(v[6],v[7]), 20, (0,255,0),-1)
     
     return masked_image, line_img
 
