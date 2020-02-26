@@ -53,10 +53,11 @@ The hardware setup inside the vehicle is shown here:
 The project contains the following files: 
 
     .
-    ├── app_pfcw.py            # Contains the implementaion of the P-FCW application.
+    ├── app_pfcw.py             # Contains the implementaion of the P-FCW application.
     ├── helper.py               # Contains the helpers functions for Lane Detection.
-    ├── imgs                    # Contains the raw images of the collected driving data.
+    ├── data                    # Contains the raw images of the collected driving data.
     ├── models                  # Contains the pre-trained IntelOpenVino models.
+    ├── images                  # Contains the project resource images.
     └── README.md
     
 
