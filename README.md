@@ -15,15 +15,20 @@ In implementing the application, I have integrated the simple lane detection and
 One of the focus of this project was to reduce the cost. Thus, I have a Raspberry Pi instead of using a GPU-enabled device (e.g. Jetson TX).
 But the inference for vehicle detection was slow in Raspberry Pi, and bought an Intel Modivus Neural Computing Stick for inference engine.
 
-Here is the list of hardware and their corresponding prices:
+Here is the list of hardware:
 
 
-1. Raspberry Pi ($35)
-2. Intel Neural Compute Stick ($79)
-3. Video Web Camera ($70)
+1. Raspberry Pi 
+2. Intel Neural Compute Stick 
+3. Video Web Camera 
+4. Display
 
 The hardware setup inside the vehicle is shown here:
 
+
+
+![Alt text](images/	hardware_setup.jpg?raw=true "Hardware Setup")
+ 
 
 
 ### P-FCW ALgorithm
