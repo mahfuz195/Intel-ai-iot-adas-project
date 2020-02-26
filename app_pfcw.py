@@ -187,6 +187,9 @@ def main():
     model_xml = "models/vehicle-detection-adas-0002_f16.xml"
     model_bin = "models/vehicle-detection-adas-0002_f16.bin"
 
+    #model_xml = "models/mobilenet-ssd/FP16/mobilenet-ssd.xml"
+    #model_bin = "models/mobilenet-ssd/FP16/mobilenet-ssd.xml"
+
     ie = IECore()
     detector = Detector(ie, model_xml, model_bin, 0.4, "MYRIAD")
     
