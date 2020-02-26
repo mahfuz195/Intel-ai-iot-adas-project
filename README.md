@@ -63,13 +63,40 @@ In the foundational course of IntelAI using OpenVino, I have learned how to use 
 Also, I have implemented  the Async Inference model for speeding up the inference time. The code I followed to implement is from Intel page:
 https://github.com/opencv/open_model_zoo/tree/master/demos/python_demos
 
+Here is the code for Async Inference mode:
+
+```
+if self.is_async:
+    self.feed_dict[self.input_blob] = image
+    self._exec_model.start_async(request_id=self.cur_request_id,inputs=self.feed_dict)
+
+    t0 = cv2.getTickCount()
+    while True:
+        status = self._exec_model.requests[self.cur_request_id].wait(-1)
+        if (status ==0):
+            output = self._exec_model.requests[self.cur_request_id].outputs
+            break
+        else:
+            time.sleep(0.01)
+
+        self.cur_request_id, self.next_request_id = self.next_request_id, self.cur_request_id
+```                
 
 During the project, I learned a lot on IntelOpenVino tools and is happy to implement in real-world what I have learned.
 
 
 
 ### Project Output
-I installed the necessary hardware in the vehicle and drove my car in one of the road in Clemson (US-123). The output from the P-FCW application is shown in the following video:
+I installed the necessary hardware in the vehicle and drove my car in US-123 located at Clemson, South Carolina, USA. An Image out on the dashboard of the car is as follows:
+
+![Alt text](images/frame_5189.jpg?raw=true "Sample Output")
+
+
+##### Video:
+
+The output from the P-FCW application is shown in the following video:  https://youtu.be/RQPihgR3OXE
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/RQPihgR3OXE/0.jpg)](https://www.youtube.com/watch?v=RQPihgR3OXE)
 
 
 ### How to run the project
@@ -82,4 +109,13 @@ To run the project, please go inside the project direction and run the following
 ### Further Improvement
 
 The performace of the applicaiton in terms of frame per second (FPS) was a bottneck in my implementation. I was able to gain atmost ~5FPS for P-FCW usign Async mode of IntelOpenVino tools and Intel Neural Compute Stick. 
+
+### Summary 
+
+It was fun working on this project. I would like to thank Intel and Udacity for giving me the opportunity through the Intel AI Scholarship, to learn more about IoT Edge Computing. 
+
+### A personal note
+
+A few days back I saw a job advertisement from one of the renowned automated vehicle companies. There was a question in the advertisement "What is the most exceptional thing you have done?". That made me wonder what I have done that is exceptional. Maybe this project? However, happy to pull this project off, even after a huge graduate research workload. :)
+
 
