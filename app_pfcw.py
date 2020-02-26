@@ -175,7 +175,7 @@ def viz(frame,out):
         
     return frame, total_vehicle
 
-w_img = cv2.imread('images/w_img.jpg',1)
+w_img = cv2.imread('images/warning.jpg',1)
 h, w = int(w_img.shape[0]*0.3), int(w_img.shape[1]*0.3)
 w_img = cv2.resize(w_img, (w,h),interpolation= cv2.INTER_AREA)
 w_img = Image.fromarray(w_img)
