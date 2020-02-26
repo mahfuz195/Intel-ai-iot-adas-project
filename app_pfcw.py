@@ -1,11 +1,12 @@
 import sys
 import cv2
+import glob as glob
 import numpy as np
 from argparse import ArgumentParser, SUPPRESS
 
-#from openvino.inference_engine import IECore
+from openvino.inference_engine import IECore
 
-#from detector import Detector
+from detector import Detector
 from helper import *
 
 from imutils.video import FPS
@@ -175,20 +176,21 @@ def viz(frame,out):
         
     return frame, total_vehicle
 
-w_img = cv2.imread('images/warning.jpg',1)
+
+w_img = cv2.imread('images/warning.jpeg',1)
 h, w = int(w_img.shape[0]*0.3), int(w_img.shape[1]*0.3)
 w_img = cv2.resize(w_img, (w,h),interpolation= cv2.INTER_AREA)
 w_img = Image.fromarray(w_img)
-
-
 
 
 def main():
     model_xml = "models/vehicle-detection-adas-0002_f16.xml"
     model_bin = "models/vehicle-detection-adas-0002_f16.bin"
 
-    #ie = IECore()
-    #detector = Detector(ie, model_xml, model_bin, 0.4, "MYRIAD")
+    ie = IECore()
+    detector = Detector(ie, model_xml, model_bin, 0.4, "MYRIAD")
+    
+    
     
     count = 4734
     count_max = 5269
@@ -202,7 +204,8 @@ def main():
         
         #print ('readling file : ', filename)
         frame = cv2.imread(in_filename,1)
- 
+
+        
         count+=1
         if(count>=count_max): break
         
