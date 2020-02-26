@@ -9,6 +9,23 @@ As being a robotics enthusiast, I wanted to implement this P-FCW application in 
 In implementing the application, I have integrated the simple lane detection and Deep Learning based vehicle detection together. I have used the code from one of my projects for Lane detection, which I learned during "Self-driving Car Nano-degree" program, and used IntelOpenVino pre-trained model for vehicle detection.
 
 
+### P-FCW ALgorithm
+The algorithm is implemneted as follows:
+```
+while (capture image from dashboard):
+  1. Detect Lane Marking.
+  2. Form a polygon (P) using detected lane markings.
+  3. Detect Vehicles
+  4. For each vehicle detected:
+     4(a) Calculate the bottom middle point (p1) of bounding box.
+     4(b) if p1 is inside the P:
+          --> issue and pre-forward collision warning.
+```
+### Dataset
+
+To implement the project and fine tuning the project performance, I create my own dataset. I used a camera in the dashboard of my car and recorded the video in my laptop. I collected almost 5000 images from driving in the US-123 state road. Some snapshot of the data is available in this project repository.
+
+
 ### Hardware Setup
 
 
@@ -29,23 +46,6 @@ The hardware setup inside the vehicle is shown here:
 
 ![Alt text](images/hardware_setup.jpg?raw=true "Hardware Setup")
  
-
-
-### P-FCW ALgorithm
-The algorithm is implemneted as follows:
-```
-while (capture image from dashboard):
-  1. Detect Lane Marking.
-  2. Form a polygon (P) using detected lane markings.
-  3. Detect Vehicles
-  4. For each vehicle detected:
-     4(a) Calculate the bottom middle point (p1) of bounding box.
-     4(b) if p1 is inside the P:
-          --> issue and pre-forward collision warning.
-```
-### Dataset
-
-To implement the project and fine tuning the project performance, I create my own dataset. I used a camera in the dashboard of my car and recorded the video in my laptop. I collected almost 5000 images from driving in the US-123 state road. Some snapshot of the data is available in this project repository.
 
 
 ### Project File Structure:
