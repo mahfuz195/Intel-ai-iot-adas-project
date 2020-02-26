@@ -207,39 +207,15 @@ def main():
         if(count>=count_max): break
         
         if (frame is None): continue 
-        #if frame== :
-        #    contiune
-        
 
-
-        #img = cv2.imread("", cv2.IMREAD_COLOR)
-        #frames_reader, delay = (VideoReader(args.input), 1) if img is None else (ImageReader(args.input), 0)
-
-        #if args.labels:
-        #    with open(args.labels, 'r') as f:
-        #        labels_map = [x.strip() for x in f]
-        #else:
-        #    labels_map = None
-        #frame = cv2.resize(frame, (1280,720),interpolation= cv2.INTER_AREA)
-        #t0 = cv2.getTickCount()
         frame = detect_lines(frame)
-<<<<<<< HEAD:LaneVehicle.py
-        #out = detector.detect(frame)
-        #frame, t_vehicle = viz(frame,out)
-=======
-        #t = (cv2.getTickCount() - t0) / cv2.getTickFrequency()
-        #print ('Lane Detection frequency : ', 1.0/t)
-        
-        out = detector.detect(frame)
-        
-        
+        out = detector.detect(frame)        
         frame, t_vehicle = viz(frame,out)
->>>>>>> 67b6665882088ea025d84d8e972b4a558f3e61a0:app_pfcw.py
         
         
         
-        #cv2.putText(frame, 'summary: {:.1f} FPS'.format(float(1 / (detector.infer_time * len(out)))), (5, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
-        #cv2.putText(frame, 'Total Vehicle Detected: {:.0f}'.format(t_vehicle), (5, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
+        cv2.putText(frame, 'summary: {:.1f} FPS'.format(float(1 / (detector.infer_time * len(out)))), (5, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
+        cv2.putText(frame, 'Total Vehicle Detected: {:.0f}'.format(t_vehicle), (5, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 200))
         
         
         cv2.imshow('Vechile ADAS System', frame)
@@ -261,32 +237,6 @@ def main():
     print("[INFO] elasped time: {:.2f}".format(fps.elapsed()))
     print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
 
-"""
-        
-    for frame in frames_reader:
-        detections = detector.detect(frame)
-        for det in detections:
-            xmin, ymin, xmax, ymax = det[:4].astype(np.int)
-            xmin = max(0, xmin)
-            ymin = max(0, ymin)
-            xmax = min(frame.shape[1], xmax)
-            ymax = min(frame.shape[0], ymax)
-            class_id = det[5]
-            det_label = labels_map[int(class_id)] if labels_map else str(int(class_id))
-            color = (min(class_id * 12.5, 255), min(class_id * 7, 255), min(class_id * 3, 255))
-            cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), color, 2)
-            cv2.putText(frame, det_label + ' ' + str(round(det[4] * 100, 1)) + ' %', (xmin, ymin - 7),
-                         cv2.FONT_HERSHEY_COMPLEX, 0.6, color, 1)
-
-        cv2.putText(frame, 'summary: {:.1f} FPS'.format(
-            float(1 / (detector.infer_time * len(detections)))), (5, 15), cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 200))
-        if args.no_show:
-            continue
-        cv2.imshow('CenterNet Detection Demo', frame)
-        key = cv2.waitKey(delay)
-        if key == 27:
-            return
-    """
 if __name__ == "__main__":
     sys.exit(main() or 0)
 
