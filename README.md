@@ -1,3 +1,9 @@
+### *******Update*******
+
+This project got selected as the Winner in Transportation category in Intel Edge AI Scholarship Challenge Project Show!!!
+
+
+
 # Pre-Forward Collision Warning Application (P-FCW)
 
 The roadway traffic crash in one the leading causes of death in United States (US). Every year almost 30000 Americans die in traffic related crashes. According to the US Department of Transportation report, almost 2685 rear-end collision happened only in 2018. However, most of this rear-end collision or forward-collision can be prevented using latest technology. Many recent vehicles are equipped with advance driving assistance system (ADAS), where forward collision warning is included. However, I think, in spite of having a forward collision warning, we can further reduce the forward collision using a pre-forward collision warning that will be given to the drivers. Hence, in this project I have implemented a pre-forward collision warning application using a computer vision. Furthermore, one of my goals was to reduce the cost of such ADAS system, and equip the conventional vehicles with pre-forward collision application, which does not contain any ADAS system yet.
